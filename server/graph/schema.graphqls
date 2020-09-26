@@ -1,0 +1,30 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Word {
+	id: ID!
+	word: String!
+	meaning: String!
+	author: User!
+}
+  
+  
+type User {
+	id: ID!
+	name: String!
+}
+  
+type Query {
+	words: [Word!]!
+}
+  
+input NewWord {
+	word: String!
+  meaning: String!
+	userId: String!
+}
+  
+type Mutation {
+	createWord(input: NewWord!): Word!
+}
